@@ -1,8 +1,10 @@
 import Link from "next/link";
 import styles from "./home/home.module.css";
+import Navigation from "./components/Navigation";
 export default function Home() {
   return (
     <div>
+      <Navigation />
       <h1 className={styles.title}>Home Page</h1>
 
       <Link href="/about" className={styles.link}>

@@ -1,9 +1,10 @@
 import Link from "next/link";
-
+import Navigation from "../components/Navigation";
 import styles from "../home/home.module.css";
 export default function About() {
   return (
     <div>
+      <Navigation />
       <h1 className={styles.title}>
         {" "}
         Hi, I am Anna — a full-stack developer with a curious mind
