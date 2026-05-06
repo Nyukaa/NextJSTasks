@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Title from "./components/Title";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import Alert from "./components/Alert";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
 
         <p className={styles.text}>This is Home Page</p>
         <Button />
+        <Alert />
+
         <div>
           <Link href="/about" className={styles.link}>
             Go to About Page
