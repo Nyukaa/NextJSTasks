@@ -5,11 +5,24 @@ export async function POST(req) {
 
   const { name, message } = body;
 
-  return NextResponse.json({
-    success: true,
-    received: {
-      name,
-      message,
+  if (!name || !message) {
+    return NextResponse.json(
+      {
+        error: "Name and message are required",
+      },
+      { status: 400 }
+    );
+  }
+
+  return NextResponse.json(
+    {
+      success: true,
+      message: "Contact form submitted successfully",
+      data: {
+        name,
+        message,
+      },
     },
-  });
+    { status: 200 }
+  );
 }
