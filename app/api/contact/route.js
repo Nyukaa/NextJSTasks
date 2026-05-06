@@ -4,7 +4,12 @@ export async function POST(req) {
   const body = await req.json();
 
   const { name, message } = body;
+  // Simple authentication check
+  const authHeader = req.headers.get("authorization");
 
+  if (!authHeader) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   if (!name || !message) {
     return NextResponse.json(
       {
@@ -23,6 +28,6 @@ export async function POST(req) {
         message,
       },
     },
-    { status: 200 }
+    { status: 201 }
   );
 }
