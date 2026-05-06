@@ -1,0 +1,17 @@
+.title {
+  color: #6a9a7f;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: #6a9a7a;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 15px;
+  color: blue;
+}

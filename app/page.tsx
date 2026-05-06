@@ -1,21 +1,13 @@
 import Link from "next/link";
-
+import styles from "./home/home.module.css";
 export default function Home() {
   return (
     <div>
-      <h1
-        style={{
-          color: "#6a9a7f",
+      <h1 className={styles.title}>Home Page</h1>
 
-          fontSize: "0.9rem",
-
-          margin: 0,
-        }}
-      >
-        Home Page
-      </h1>
-
-      <Link href="/about">Go to About Page</Link>
+      <Link href="/about" className={styles.link}>
+        Go to About Page
+      </Link>
     </div>
   );
 }
