@@ -27,19 +27,18 @@ export default function Home() {
         >
           <ContactForm />
         </div>
-       
-          <Card bgColor="#4a90e2" title="Blue Card" />
-          <Card bgColor="#ee0e2a" title="Pink Card" />
-          <Card bgColor="#2ecc71" title="Green Card" />
-        </div>
-        <Button />
-        <Alert />
 
-        <div>
-          <Link href="/about" className={styles.link}>
-            Go to About Page
-          </Link>
-        </div>
+        <Card bgColor="#4a90e2" title="Blue Card" />
+        <Card bgColor="#ee0e2a" title="Pink Card" />
+        <Card bgColor="#2ecc71" title="Green Card" />
+      </div>
+      <Button />
+      <Alert />
+
+      <div>
+        <Link href="/about" className={styles.link}>
+          Go to About Page
+        </Link>
       </div>
     </AppLayout>
   );
