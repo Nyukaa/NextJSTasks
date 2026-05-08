@@ -1,10 +1,19 @@
-export const n = 10;
-export default async function Pages() {
+import { unstable_noStore as noStore } from "next/cache";
+
+export const revalidate = 10;
+
+function getRandomPost(posts) {
+  const index = Math.floor(Math.random() * posts.length);
+  return posts[index];
+}
+
+export default async function Page() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    next: { revalidate: n },
+    next: { revalidate: 10 },
   });
 
   const posts = await response.json();
+  const randomPost = getRandomPost(posts);
 
   return (
     <div>
@@ -15,6 +24,8 @@ export default async function Pages() {
         ))}
       </ul>
       <p>Last updated: {new Date().toLocaleString()}</p>
+      <h2>Random Post</h2>
+      <p>{randomPost.title}</p>
     </div>
   );
 }
