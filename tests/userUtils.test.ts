@@ -1,4 +1,4 @@
-import { validateUser, createUser, findUserById, User } from "../lib/userUtils";
+import { findUserById, User } from "../lib/userUtils";
 
 const mockUsers: User[] = [
   { id: 1, name: "Anna", age: 25 },
