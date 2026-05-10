@@ -30,7 +30,8 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "jest.config.js",
-    "app/components/Greeting.js"
+    "app/components/Greeting.js",
+    "tests/Home.test.jsx"
   ],
   "exclude": ["node_modules"]
 }
