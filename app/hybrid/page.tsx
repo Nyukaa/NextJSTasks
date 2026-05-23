@@ -1,5 +1,14 @@
 export const revalidate = 10;
 
+type Post = {
+  id: number;
+  title: string;
+};
+
+type User = {
+  name: string;
+};
+
 export default async function HybridPage() {
   // SSG / ISR section
   const postsResponse = await fetch(
@@ -9,7 +18,7 @@ export default async function HybridPage() {
     }
   );
 
-  const posts = await postsResponse.json();
+  const posts: Post[] = await postsResponse.json();
 
   // SSR section
   const userResponse = await fetch(
@@ -19,13 +28,12 @@ export default async function HybridPage() {
     }
   );
 
-  const user = await userResponse.json();
+  const user: User = await userResponse.json();
 
   return (
     <div>
       <h1>Hybrid Rendering Page</h1>
 
-      {/* Static / ISR section */}
       <section>
         <h2>Latest Posts (ISR)</h2>
 
@@ -40,7 +48,6 @@ export default async function HybridPage() {
 
       <hr />
 
-      {/* Dynamic / SSR section */}
       <section>
         <h2>User Dashboard (SSR)</h2>
 
