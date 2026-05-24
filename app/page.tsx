@@ -8,6 +8,7 @@ import Card from "./components/Card";
 import Alert from "./components/Alert";
 import ProfileCard from "./components/ProfileCard";
 import ContactForm from "./components/ContactForm";
+import Script from "next/script";
 export default function Home() {
   return (
     <AppLayout>
@@ -39,6 +40,10 @@ export default function Home() {
         <Link href="/about" className={styles.link}>
           Go to About Page
         </Link>
+        <Script
+          src="https://example.com/analytics.js"
+          strategy="afterInteractive"
+        />
       </div>
     </AppLayout>
   );
